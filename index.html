@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>ui-heist</title>
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="./assets/car-with-bg.png" id="car" alt="">
+        <audio id="engineAudio">
+            <source src="./assets/engine.mp3" type="audio/ogg">
+            <source src="./assets/engine.mp3" type="audio/mpeg">
+        </audio>
+        <div id="before-start">
+            <div id="on-wrap" onclick="start()"><img src="./assets/poweron.svg" id="on" alt=""></div>
+            <h3 id="on-text">ENGINE ON</h3>
+            <h4 id="welcome">Let the game begins..! Have a safe drive</h4>
+        </div>
+        <div id="tools">
+            <img src="./assets/steering-wheel.png" id="steering" alt="">
+            <div id="controls">
+                <div class="left">
+                    <div class="off-wrap"><img src="./assets/power.svg" id="off" alt=""></div>
+                    <div class="left-controls">
+                        <div id="acc-wrap"><img src="./assets/accelerator.png" id="accelerator" alt=""></div>
+                        <div id="brake-wrap"><img src="./assets/brake.png" id="brake" alt=""></div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div id="speaker-wrap"><img src="./assets/sound.svg" id="speaker" alt=""></div>
+                    <div id="fuel-wrap"><img src="./assets/fuel.svg" id="fuel" alt=""></div>
+                    <div id="left-wrap"><img src="./assets/left-arrow.svg" id="turn-left" alt=""></div>
+                    <div id="right-wrap"><img src="./assets/left-arrow.svg" id="turn-right" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
