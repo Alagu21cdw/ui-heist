@@ -5,28 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
     <title>ui-heist</title>
-    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <img src="./assets/car-with-bg.png" id="car" alt="">
-        <audio id="engineAudio">
+        <img src="./assets/car-with-bg.png" id="car" alt="" />
+        <div class="trapezoid-light-left light"></div>
+        <!-- <div class="oval"></div> -->
+        <div class="trapezoid-light-right light"></div>
+        <div class="blink-left" id="blink-left">.</div>
+        <div class="blink-right" id="blink-right">.</div>
+        <audio id="engineAudio" class="hide">
             <source src="./assets/engine.mp3" type="audio/ogg">
             <source src="./assets/engine.mp3" type="audio/mpeg">
         </audio>
-        <div id="before-start">
-            <div id="on-wrap" onclick="start()"><img src="./assets/poweron.svg" id="on" alt=""></div>
-            <h3 id="on-text">ENGINE ON</h3>
-            <h4 id="welcome">Let the game begins..! Have a safe drive</h4>
+        <audio id="indicatorAudio">
+            <source src="./assets/indicator.mp3" type="audio/ogg">
+            <source src="./assets/indicator.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="lightAudio">
+            <source src="./assets/light.mp3" type="audio/ogg">
+            <source src="./assets/light.mp3" type="audio/mpeg">
+        </audio>
+        <!--rain-->
+        <audio id="softRain">
+            <source src="./assets/raining.mp3" type="audio/ogg">
+            <source src="./assets/raining.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="rainOnCar">
+            <source src="./assets/rain.mp3" type="audio/ogg">
+            <source src="./assets/rain.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="thunderAudio">
+            <source src="./assets/thunder.mp3" type="audio/ogg">
+            <source src="./assets/thunder.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="wiperAudio">
+            <source src="./assets/wiper.mp3" type="audio/ogg">
+            <source src="./assets/wiper.mp3" type="audio/mpeg">
+        </audio>
+        <div class="before-start-wrapper" class="show">
+            <div id="before-start">
+                <div id="on-wrap"><img src="./assets/poweron.svg" id="on" alt="power on button"></div>
+                <h3 id="on-text">ENGINE ON</h3>
+                <h4 id="welcome">Let the game begins..! Have a safe drive</h4>
+            </div>
         </div>
-        <div id="tools">
+
+        <!-- Car display information panel::start -->
+        <div class="information-panel-wrapper hide">
+            <div class="information-panel">
+                <div class="left-section">
+                    <span class="time"></span>
+                    <div class="fuel-details">
+                        <p class="fuel">60</p>
+                        <p class="fuel-unit">Ltrs</p>
+                    </div>
+                </div>
+                <div class="middle-section">
+                    <p class="greeting-text">Good Evening..! Alagu & Pooja</p>
+                    <div class="speed-limit-wrapper hide">
+                        <div class="speed-limit">
+                            <img src="./assets/warning.png" alt="warning" />
+                            <p class="speed-limit-text">Speed Limit Exceeded</p>
+                        </div>
+                    </div>
+                    <div class="speedometer">
+                        <p class="speed">0</p>
+                        <p class="speed-unit">Kmph</p>
+                    </div>
+                </div>
+                <div class="right-section">
+                    <div class="temp-wrapper">
+                        <p class="temp">34.C</p>
+                        <p>Outside</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Car display information panel::end -->
+        <div id="tools" class="hide">
             <img src="./assets/steering-wheel.png" id="steering" alt="">
+            <img src="./assets/screw-driver.png" id="indicator" alt="">
             <div id="controls">
                 <div class="left">
                     <div class="off-wrap"><img src="./assets/power.svg" id="off" alt=""></div>
                     <div class="left-controls">
-                        <div id="acc-wrap"><img src="./assets/accelerator.png" id="accelerator" alt=""></div>
-                        <div id="brake-wrap"><img src="./assets/brake.png" id="brake" alt=""></div>
+                        <div id="brake-wrap" class="brake-wrap"><img src="./assets/accelerator.png" id="accelerator" alt=""></div>
+                        <div id="acc-wrap" class="acc-wrap"><img src="./assets/brake.png" id="brake" alt=""></div>
                     </div>
                 </div>
                 <div class="right">
@@ -36,6 +103,12 @@
                     <div id="right-wrap"><img src="./assets/left-arrow.svg" id="turn-right" alt=""></div>
                 </div>
             </div>
+        </div>
+        <div class="on-rain">
+            <div class="rain"></div>
+            <img src="./assets/Car-without-bg.png" id="carImage" alt="">
+            <div class="wiper wiper-left"><img src="./assets/wiper.png" class="wiper-image" alt=""></div>
+            <div class="wiper wiper-right"><img src="./assets/wiper.png" class="wiper-image" alt=""></div>
         </div>
     </div>
 </body>
