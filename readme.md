@@ -29,14 +29,14 @@ run the index.html in browser
 - press 'o' to turn off indicator
 - press 'M' to turn On and Off the Headlight (with SFX)
 - Tree feature:
- 1. on the speed of 10kmph the tree passess slowly
- 2. on the speed of 100kmph tree passess little faster
- 3. on the speed of 160 tree passess at the fastest speed
+    - on the speed of 10kmph the tree passess slowly
+    - on the speed of 100kmph tree passess little faster
+    - on the speed of 160 tree passess at the fastest speed
 - Gear feature:
- 1. first gear on 10kmph
- 2. gear shifts on 50kmph
- 3. gear shifts on 100kmph
- 4. gear shit also happens on slowing down the car accordingly
+    - first gear on 10kmph
+    - gear shifts on 50kmph
+    - gear shifts on 100kmph
+    - gear shit also happens on slowing down the car accordingly
 - truck passes by on 10th second with SFX
 - Lane passing on the given image
 - dashboard music system
