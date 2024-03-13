@@ -40,5 +40,5 @@ run the index.html in browser
 - truck passes by on 10th second with SFX
 - Lane passing on the given image
 - dashboard music system
-- Experience accident at the maximum speed 280kmph
+- Experience accident at the maximum speed 250kmph
 - teddy and tissue on the car dashboard

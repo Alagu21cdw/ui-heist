@@ -244,7 +244,7 @@ const accelerate = (action) => {
             if(speed+1 < MAX_SPEED_LIMIT){
                 $(".speed").text(speed+1)
             }
-            if(speed+1 === MAX_SPEED_LIMIT){
+            if(speed+1 === 250){
                 crash()
             }
             break;
