@@ -3,17 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/musicPlayer.css">
+    <link rel="stylesheet" href="./styles/progressBar.css">
+    <link rel="stylesheet" href="./styles/rain.css">
+    <link rel="stylesheet" href="./styles/tools.css">
+    <link rel="stylesheet" href="./styles/backgroundScene.css">
     <title>ui-heist</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script src="main.js" defer></script>
+    <script src="./scripts/main.js" defer></script>
+    <script src="./scripts/musicPlayer.js" defer></script>
+    <script src="./scripts/backgroundScene.js" defer></script>
 </head>
 <body>
     <div class="container">
-        <img src="./assets/car-with-bg.png" id="car" alt="" />
-        <div class="trapezoid-light-left light"></div>
+        <img src="./assets/road.png" id="car" alt="car background" />
+        <div class="road">
+            <div class="depth"></div>
+        </div>
+
         <!-- <div class="oval"></div> -->
-        <div class="trapezoid-light-right light"></div>
+        <div>
+            <div class="trapezoid-light-left light"></div>
+            <div class="trapezoid-light-right light"></div>
+        </div>
         <div class="blink-left" id="blink-left">.</div>
         <div class="blink-right" id="blink-right">.</div>
         <audio id="engineAudio" class="hide">
@@ -45,6 +59,60 @@
             <source src="./assets/wiper.mp3" type="audio/ogg">
             <source src="./assets/wiper.mp3" type="audio/mpeg">
         </audio>
+        <audio id="speeding">
+            <source src="./assets/accelerate.mp3" type="audio/ogg">
+            <source src="./assets/accelerate.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="slowing">
+            <source src="./assets/slow.mp3" type="audio/ogg">
+            <source src="./assets/slow.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="horn">
+            <source src="./assets/horn.mp3" type="audio/ogg">
+            <source src="./assets/horn.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="brake">
+            <source src="./assets/brake.mp3" type="audio/ogg">
+            <source src="./assets/brake.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="cheemsAudio">
+            <source src="./assets/cheemsAudio.mp3" type="audio/ogg">
+            <source src="./assets/cheemsAudio.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="crashAudio">
+            <source src="./assets/crash.mp3" type="audio/ogg">
+            <source src="./assets/crash.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="siren">
+            <source src="./assets/siren.mp3" type="audio/ogg">
+            <source src="./assets/siren.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="police">
+            <source src="./assets/police.mp3" type="audio/ogg">
+            <source src="./assets/police.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="off">
+            <source src="./assets/off.mp3" type="audio/ogg">
+            <source src="./assets/off.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="lightoff">
+            <source src="./assets/lightoff.mp3" type="audio/ogg">
+            <source src="./assets/lightoff.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="batman">
+            <source src="./assets/batmancut.mp3" type="audio/ogg">
+            <source src="./assets/batmancut.mp3" type="audio/mpeg">
+        </audio>
+
+        <audio id="truck">
+            <source src="./assets/truck.mp3" type="audio/ogg">
+            <source src="./assets/truck.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="gear">
+            <source src="./assets/gear.mp3" type="audio/ogg">
+            <source src="./assets/gear.mp3" type="audio/mpeg">
+        </audio>
         <div class="before-start-wrapper" class="show">
             <div id="before-start">
                 <div id="on-wrap"><img src="./assets/poweron.svg" id="on" alt="power on button"></div>
@@ -53,14 +121,57 @@
             </div>
         </div>
 
+        <div class="player hide">
+          
+            <div class="img">
+              <img src="" id="thumb" />
+            </div>
+            <div class="details">
+              <h3 id="title"></h3>
+              <p id="musician"></p>
+            </div>
+            <audio id="song">
+              <source src="" type="audio/mp3">
+              </source>
+            </audio>
+          
+            <div class="time">
+              <span id="start">2:28</span>
+              <span id="end">4:33</span>
+            </div>
+            <input type="range" id="progress" value="0">
+          
+            <div class="action">
+          
+              <button onclick="prevPlay()">
+                <i class="bx bx-skip-previous"></i>
+              </button>
+          
+              <button onclick="playPause()" class="play" id="play">
+                <i class="bx bx-play"></i>
+              </button>
+          
+              <button onclick="nextPlay()">
+                <i class="bx bx-skip-next"></i>
+              </button>
+          
+            </div>
+        </div>
+        <img src="./assets/teddy-bear.png" class="teddy" alt="car toys" />
+        <img src="./assets/wet.png" class="tissue" alt="car toys" />
+        <div class="tree-wrap"><img src="./assets/tree.png" alt="" class="tree"></div>
+        <div class="gear-wrap"><img src="./assets/gear.png" class='gear gear-shift' alt=""></div>
         <!-- Car display information panel::start -->
         <div class="information-panel-wrapper hide">
             <div class="information-panel">
                 <div class="left-section">
-                    <span class="time"></span>
+                    <span class="current-time"></span>
                     <div class="fuel-details">
                         <p class="fuel">60</p>
                         <p class="fuel-unit">Ltrs</p>
+                        <div class="progress">
+                            <div class="progress-value"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="middle-section">
@@ -78,7 +189,7 @@
                 </div>
                 <div class="right-section">
                     <div class="temp-wrapper">
-                        <p class="temp">34.C</p>
+                        <p class="temp">34&degC</p>
                         <p>Outside</p>
                     </div>
                 </div>
@@ -90,25 +201,66 @@
             <img src="./assets/screw-driver.png" id="indicator" alt="">
             <div id="controls">
                 <div class="left">
-                    <div class="off-wrap"><img src="./assets/power.svg" id="off" alt=""></div>
+                    <div class="off-wrap"><img src="./assets/power.svg" id="off" alt="power off" /></div>
                     <div class="left-controls">
-                        <div id="brake-wrap" class="brake-wrap"><img src="./assets/accelerator.png" id="accelerator" alt=""></div>
-                        <div id="acc-wrap" class="acc-wrap"><img src="./assets/brake.png" id="brake" alt=""></div>
+                        <div id="brake-wrap" class="brake-wrap"><img src="./assets/accelerator.png" id="accelerator" alt="accelerate" /></div>
+                        <div id="acc-wrap" class="acc-wrap"><img src="./assets/brake.png" id="brake" alt="brake" /></div>
+                    </div>
+                </div>
+                <div class="middle">
+                    <div class="speaker-wrap wrap">
+                        <img src="./assets/camera.png" id="camera" alt="camera" />
                     </div>
                 </div>
                 <div class="right">
-                    <div id="speaker-wrap"><img src="./assets/sound.svg" id="speaker" alt=""></div>
-                    <div id="fuel-wrap"><img src="./assets/fuel.svg" id="fuel" alt=""></div>
-                    <div id="left-wrap"><img src="./assets/left-arrow.svg" id="turn-left" alt=""></div>
-                    <div id="right-wrap"><img src="./assets/left-arrow.svg" id="turn-right" alt=""></div>
+                    <div id="speaker-wrap" class="speaker-wrap"><img src="./assets/sound.svg" id="speaker" alt="speaker" /></div>
+                    <svg id="fuel-wrap" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                    width="512.000000pt" height="512.000000pt" viewBox="0 0 512.000000 512.000000"
+                    preserveAspectRatio="xMidYMid meet">
+
+                    <g transform="translate(0.000000,512.000000) scale(0.100000,-0.100000)"
+                    fill="green" stroke="none">
+                    <path d="M2506 4738 c-60 -64 -326 -386 -458 -554 -642 -824 -1028 -1502
+                    -1113 -1959 -23 -121 -16 -368 14 -509 110 -516 441 -944 906 -1171 576 -282
+                    1257 -213 1760 180 318 248 529 589 615 992 30 138 38 378 17 498 -74 420
+                    -408 1032 -971 1780 -232 308 -610 767 -642 779 -9 3 -32 6 -51 6 -29 0 -44
+                    -8 -77 -42z m404 -1308 c26 -26 26 -27 -23 -535 l-42 -430 261 -5 c240 -5 264
+                    -7 283 -24 49 -44 54 -37 -475 -736 -272 -360 -506 -665 -520 -678 -32 -28
+                    -61 -28 -91 0 l-23 21 0 459 0 458 -226 0 c-264 0 -284 5 -284 75 1 24 98 158
+                    496 680 272 358 511 669 530 693 40 48 80 56 114 22z"/>
+                    </g>
+                    </svg>
+                    <div id="left-wrap" class="left-wrap"><img src="./assets/left-arrow.svg" id="turn-left" alt="left pointer" /></div>
+                    <div id="right-wrap" class="right-wrap"><img src="./assets/left-arrow.svg" id="turn-right" alt="right pointer" /></div>
                 </div>
             </div>
         </div>
         <div class="on-rain">
             <div class="rain"></div>
-            <img src="./assets/Car-without-bg.png" id="carImage" alt="">
-            <div class="wiper wiper-left"><img src="./assets/wiper.png" class="wiper-image" alt=""></div>
-            <div class="wiper wiper-right"><img src="./assets/wiper.png" class="wiper-image" alt=""></div>
+            <img src="./assets/Car-without-bg.png" id="carImage" alt="car background" />
+            <img src="./assets/cheems.png" class="cheems" alt="cartoon" />
+            <div class="wiper wiper-left"><img src="./assets/wiper.png" class="wiper-image" alt="wiper" /></div>
+            <div class="wiper wiper-right"><img src="./assets/wiper.png" class="wiper-image" alt="wiper" /></div>
+        </div>
+        <div class="accident">
+            Get ready for the Immersive Experience!<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Fasten your seat belts<br> &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  Close your eyes on...</h2>
+        </div>
+        <div id="count">
+            
+        </div>
+        <div class="crash">
+            <img src="./assets/car.png" id="crash" alt="crash car" />
+        </div>
+        <div id='display'>
+            
+        </div>
+        <div class="mirror"> 
+            <video id="video" width="100%" 
+                height="100%" autoplay> 
+            </video> 
+        </div> 
+        <div class="truck">
+            <img src="./assets/truck.png" class="truck-img" alt="">
         </div>
     </div>
 </body>

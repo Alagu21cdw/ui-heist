@@ -1,0 +1,322 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+.container{
+    position: relative;
+    height: 100vh;
+  }
+  
+  #car{
+    width: 100%;
+    height: 100%;
+  }
+
+#carImage{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+  #steering{
+    position: absolute;
+    bottom: 14rem;
+    right: 20rem;
+    height: 14rem;
+    width: 14rem;
+  }
+
+  #off{
+    width: 100%;
+    height: 100%;
+  }
+
+  .off-wrap{
+    background-color: #000;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  #on{
+    width: 100%;
+    height: 100%;
+  }
+
+  #on-wrap{
+    background-color: #000;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  #accelerator{
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+.information-panel-wrapper {
+  display: none;
+}
+.information-panel {
+  position: absolute;
+  top: 43%;
+  left: 15%;
+  display: flex;
+  width: 66%;
+  height: 18%;
+  color: #fff;
+  margin: 20px;
+  z-index: 2;
+}
+
+.left-section, .right-section {
+  width: 20%;
+}
+
+.middle-section {
+  width: 60%;
+  text-align: center;
+}
+.left-section .current-time {
+  font-size: 24px;
+  margin-left: 13px;
+}
+
+.fuel-details {
+  width: 45%;
+  margin: 39px 5px;
+  text-align: center;
+}
+
+.fuel {
+  font-size: 40px;
+}
+
+.fuel-unit {
+  font-size: 0.7rem;
+}
+
+.greeting-text {
+  text-align: center;
+  margin-top: -10px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.speedometer {
+  margin: 33px 0;
+}
+
+.speed {
+  font-size: 5rem;
+}
+
+.speed-unit {
+  font-size: 22px;
+}
+
+.temp-wrapper {
+  text-align: right;
+  /* margin-right: -50px; */
+  margin-top: -8px;
+}
+
+.temp {
+  font-size: 20px;
+}
+
+.temp-wrapper p:last-child {
+  font-size: 0.65rem;
+  margin: 7px 0;
+}
+
+  .acc-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #455C68;
+    height: 5rem;
+    width: 5rem;
+    border: 5px solid #7194a2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  #before-start{
+    position: absolute;
+    bottom: 25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    width: 100%;
+    gap: 5px;
+    z-index: 5;
+  }
+
+  #welcome{
+    font-style: italic;
+  }
+
+  .show {
+    display: block;
+  }
+
+  .hide {
+    display: none;
+  }
+
+
+.speed-limit {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  color: #E68F03;
+  position: absolute;
+  top: 12%;
+  left: 41.5%;
+}
+.speed-limit img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.cheems{
+  position: absolute;
+  top: 40rem;
+  right: 6rem;
+  display: none;
+  width: 20%;
+  z-index: 4;
+}
+
+.accident{
+  position: absolute;
+  top: 27rem;
+  left: 30rem;
+  font-size: 3rem;
+  display: none;
+  background-color: #000;
+  color: red;
+  padding: 10px;
+  z-index: 4;
+}
+
+#count{
+  position: absolute;
+  top: 15rem;
+  left: 52rem;
+  font-size: 10rem;
+  display: none;
+  color: #FFF;
+  padding: 10px;
+  z-index: 2;
+}
+
+#crash{
+  width: 100%;
+  height: 100%;
+}
+
+.crash{
+  position: absolute;
+  top: 18rem;
+  left: 53rem;
+  width: 3rem;
+  display: none;
+  animation-name: crash;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes crash {
+  0% {
+    top: 19rem;
+    width: 3rem;
+  }
+  
+  50% {
+    top: 18rem;
+    width: 10%;
+  }
+
+  75%{
+    top: 15rem;
+    width: 20%;
+    
+  }
+
+  80% {
+    top: 12rem;
+    width: 30%;
+
+  }
+  
+  90% {
+    top: 8rem;
+    left: 20rem;
+    width: 70%;
+    
+  }
+
+  100% {
+    top: 2rem;
+    left: 10rem;
+    width: 80%;
+    
+  }
+}
+
+#display{
+  position: absolute;
+  display: none;
+  font-size: 5rem;
+  color: #FFF;
+  padding-top: 25rem;
+  padding-left: 30rem;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  animation-name: alert;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  z-index: 5;
+}
+
+@keyframes alert {
+  0% {
+    background-color: red;
+  }
+
+  50%{
+    background-color: blue;
+  }
+
+  100%{
+    background-color: red;
+  }
+}
+
+.mirror{
+  position: absolute;
+  display: none;
+  top: 3.5rem;
+  left: 42rem;
+  width: 20%;
+  height: 10rem;
+  z-index: 4;
+}

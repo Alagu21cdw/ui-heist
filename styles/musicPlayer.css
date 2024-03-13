@@ -1,0 +1,128 @@
+.player {
+    position: absolute;
+    top: 44%;
+    left: 31%;
+    z-index: 4;
+    width: 88%;
+    max-width: 135px;
+    height: 175px;
+    overflow: hidden;
+    border-radius: 30px;
+    /* padding: 20px; */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.05);
+    /* position: relative; */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .header {
+    text-align: center;
+    margin: 0px auto;
+    padding: 5px;
+    border-bottom: 1px solid #f5f5f5;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .header span {
+    color: #ff688f;
+  }
+  
+  .img {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    border-radius: 50%;
+    background: linear-gradient(120deg, #ffa17f, #ff688f);
+    overflow: hidden;
+    margin-top: 15px;
+  }
+  
+  .img img {
+    width: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 9999;
+  }
+  
+  .img img.play {
+    animation: 15s rotate linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .details {
+    text-align: center;
+  }
+  
+  .details h3 {
+    font-size: 10px;
+  }
+  .details p {
+    color: #777;
+    font-size: 8px;
+    margin-top: 5px;
+  }
+  
+  .action {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .action button {
+    background: #fff;
+    box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, 0.028);
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 28px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    margin: 10px;
+    border: 2px solid #f8f8f8;
+    cursor: pointer;
+    color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .action button.play {
+    background: linear-gradient(135deg, #ffa17f, #ff688f);
+    color: #fff;
+  }
+  
+  .time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 7px auto 7px auto;
+    width: 90%;
+    color: #777;
+    font-size: 10px;
+  }
+  
+  .time span {
+    font-size: 10px;
+  }

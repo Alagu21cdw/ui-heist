@@ -1,0 +1,317 @@
+
+#brake{
+    height: 4rem;
+    width: 4rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+
+  .brake-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #455C68;
+    height: 5rem;
+    width: 5rem;
+    border: 5px solid #7194a2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  .left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .left-controls{
+    display: flex;
+    gap: 10px;
+  }
+
+  .right{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 15rem;
+  }
+
+  #turn-left{
+    height: 3rem;
+    width: 3rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+
+  .left-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #455C68;
+    height: 5rem;
+    width: 5rem;
+    padding-right: 5px;
+    border: 5px solid #7194a2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  #turn-right{
+    height: 3rem;
+    width: 3rem;
+    object-fit: contain;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+
+
+  .right-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #455C68;
+    height: 5rem;
+    width: 5rem;
+    padding-left: 5px;
+    border: 5px solid #7194a2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  /* */
+
+  #speaker{
+    height: 3rem;
+    width: 3rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+
+  .speaker-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #455C68;
+    height: 5rem;
+    width: 5rem;
+    padding-right: 5px;
+    border: 5px solid #7194a2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  #fuel{
+    height: 3rem;
+    width: 3rem;
+    object-fit: contain;
+    cursor: pointer;
+  }
+
+
+  #fuel-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #455C68;
+    height: 5rem;
+    width: 5rem;
+    border: 5px solid #7194a2;
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  #controls{
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    padding-left: 5rem;
+    z-index: 2;
+  }
+#steering{
+    z-index: 5;
+    transition: transform 2s ease-in-out;
+  }
+  
+  #indicator{
+    position: absolute;
+    bottom: 19rem;
+    right: 20rem;
+    height: 6rem;
+    width: 6rem;
+    transform: rotate(-150deg);
+    object-fit: contain;
+    z-index: 2;
+  }
+  
+  .blink-left {
+    position: absolute;
+    bottom: 25.5rem;
+    width: 8%;
+    display: none;
+    border-right: 40px solid transparent;
+    border-bottom: 50px solid #ffa60055;
+    animation: blink-animation 1s linear infinite;
+    border-radius: 100%;
+    /* transform: rotate(-217deg); */
+    transform: rotate(180deg);
+  }
+  
+  .blink-right {
+    position: absolute;
+    bottom: 25.5rem;
+    right: 0;
+    width: 8%;
+    display: none;
+    border-left: 40px solid transparent;
+    border-bottom: 50px solid #ffa60054;
+    border-radius: 100%;
+    animation: blink-animation 1s linear infinite;
+    /* transform: rotate(-140deg); */
+    transform: rotate(180deg);
+  }
+
+  .wrap {
+      position: absolute;
+      bottom: 0%;
+    padding-left: 5px;
+  }
+  
+  .wrap img {
+    width: 80%;
+    height: 80%;
+    object-fit: scale-down;
+  }
+
+  
+  #lane{
+    position: absolute;
+    top: 19rem;
+    left: 54rem;
+    height: 7rem;
+    animation: lane-animation 1s linear infinite;
+    object-fit: contain;
+  }
+  
+  .trapezoid-light-left {
+    position: absolute;
+    bottom: 34.5rem;
+    left: 25rem;
+    display: none;
+    border-bottom: 50px solid #ffa6006a;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 500px;
+    transform: rotate(180deg);
+  }
+  
+  .trapezoid-light-right {
+    position: absolute;
+    bottom: 34.5rem;
+    right: 25rem;
+    display: none;
+    border-bottom: 50px solid #ffa6006a;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    height: 0;
+    width: 500px;
+    transform: rotate(180deg);
+  }
+  
+  .on{
+    display: block;
+  }
+  
+  
+  .oval {
+  position: absolute;
+  bottom: 38rem;
+  left: 30rem;
+  height: 70px;
+  width: 300px;
+  background-color: #ffa6006a;
+  border-radius: 2500px 2500px 0 0;
+  }
+  
+  @keyframes blink-animation {
+    25% { opacity: 1; }
+    50% { opacity: 0; }
+    75% { opacity: 1; }
+  }
+  
+  @keyframes lane-animation {
+    25% { top: 19.5rem;
+      height: 6rem; }
+    50% { top: 19rem;
+      height: 7rem; }
+    75% { top: 19.5rem;
+      height: 6rem; }
+  }
+  
+  :root {
+    --thunder-duration: 10s;
+    --thunder-delay: 5s;
+  }
+
+  .active-tool {
+    border: 5px solid #FBFE7B;
+    box-shadow: 2px 3px 10px #FBFE7B, -2px -3px 10px #FBFE7B;
+  }
+
+  
+
+  .gear-wrap{
+    position: absolute;
+    bottom: 12rem;
+    left: 52rem;
+    width: 8rem;
+    height: 8rem;
+    z-index: 2;
+  }
+  .gear{
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+  
+  .gear-shift{
+    animation-name: gear;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  /* gear 1 */
+  @keyframes gear1 {
+    from{
+      transform: rotate(0) skew(0);
+    }
+    to{
+      transform: rotate(-30deg) translate(-30px) ;
+    }
+  }
+  @keyframes gear {
+    from{
+      transform: rotate(0) skew(0);
+    }
+    to{
+      transform: rotate(0) translate(0) ;
+    }
+  }
+  
+  @keyframes gear2 {
+    from{
+      transform: rotate(0) skew(0);
+    }
+    to{
+      transform: rotate(30deg) translate(30px) ;
+    }
+  }

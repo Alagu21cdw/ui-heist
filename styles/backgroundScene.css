@@ -1,0 +1,181 @@
+
+.road {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    left: 25%;
+    height: 100%;
+    transform-style: preserve-3d;
+    /* transform-origin: bottom; */
+    transform: rotate(89deg);
+  }
+  
+  .depth {
+    width: 46%;
+    height: 45px;
+    position: absolute;
+    left: 41%;
+    bottom: 48%;
+    /* transform: translateX(-50%); */
+    /* background: linear-gradient(to bottom, #121212 90%, transparent); */
+    z-index: 2;
+  }
+  
+  .road::after {
+    content: "";
+    display: flex;
+    position: absolute;
+    border-bottom: 30px solid #CFD3D3;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    height: 0;
+    width: 19.5px;
+    transform: rotate(-89deg);
+    left: 30.5%;
+    top: 49%;
+}
+
+.depth::after {
+    content: "";
+    display: flex;
+    position: absolute;
+    border-bottom: 63px solid #CFD3D3;
+    border-left: 22px solid transparent;
+    background-image: linear-gradient(to right, #CFD3D3 0%, #CFD3D3 70%, #0D575B 70%, #0D575B 100%);
+    border-right: 22px solid transparent;
+    height: 0;
+    width: 27px;
+    transform: rotate(-89deg);
+    left: -20%;
+    top: 0;
+
+  }
+  .moving::after {
+    animation: animate-road linear reverse 1s infinite;
+  
+  }
+  .moving-first::after {
+    animation: animate-road-first linear 1s infinite;
+  
+  }
+  
+  @keyframes animate-road {
+      from {
+          background-position: 0;
+      }
+      
+      to {
+          background-position: 120px;
+          left: 28.5%;
+      }
+  }
+  @keyframes animate-road-first {
+      from {
+          background-position: 0;
+      }
+      
+      to {
+        background-position: 120px;
+        left: 30%;
+      }
+  }
+  
+
+  .teddy, .tissue {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 37%;
+    left: 22%;
+  }
+
+  .tissue {
+    left: 26%;
+  }
+
+  .tree{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .tree-wrap{
+    position: absolute;
+    top: 10rem;
+    left: 30rem;
+    display: none;
+    width: 10rem;
+    animation-name: tree;
+    animation-timing-function: linear;
+    animation-iteration-count: 2;
+  }
+  
+  @keyframes tree {
+    0%{
+      left: 30rem;
+    }
+    100%{
+      left: 0rem;
+    }
+  }
+
+  .truck-img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .truck{
+    position: absolute;
+    top: 15rem;
+    right: 48rem;
+    display: none;
+    width: 5rem;
+    height: 5rem;
+    animation-name: truck;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes truck {
+    0%{
+      top: 15rem;
+      right: 48rem;
+      width: 5rem;
+      height: 5rem;
+    }
+    25%{
+      top: 16rem;
+      right: 45rem;
+      width: 6rem;
+      height: 6rem;
+      
+    }
+    50%{
+      top: 14rem;
+      right: 35rem;
+      width: 10rem;
+      height: 10rem;
+    }
+    75%{
+      top: 12rem;
+      right: 20rem;
+      width: 20rem;
+      height: 20rem;
+      
+    }
+    85%{
+      top: 11rem;
+      right: 8rem;
+      width: 30rem;
+      height: 30rem;
+      
+    }
+    100%{
+      top: 8rem;
+      right: 0rem;
+      width: 35rem;
+      height: 35rem;
+      
+    }
+  }
