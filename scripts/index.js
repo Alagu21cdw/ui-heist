@@ -53,6 +53,11 @@ const timeFormatter = () => {
     return result.join(":");
  }
 
+ /**
+  * 
+  * @param {number} value value based on which the color will be returned
+  * @returns color name generated based on value
+  */
  const getProgressbarColor = (value) => {
     if(value>=67 && value<100) {
         return 'green';
@@ -64,6 +69,9 @@ const timeFormatter = () => {
 
  }
 
+/**
+ * @description starts the counter so that fuel is emptied on every 5mins
+ */
 const startFuelCounter = () => {
     interval = setInterval(() => {
     const fuel = $(".fuel").text();
@@ -139,6 +147,9 @@ const notifySpeed = () => {
     $(".speed-limit-wrapper").toggleClass("hide")
 }
 
+/**
+ * @description enables the cartoons elements before crash
+ */
 const crash = () => {
     const cheems = document.getElementsByClassName('cheems')[0]
     cheems.style.display = "block"
@@ -150,6 +161,9 @@ const crash = () => {
     },3000)
 }
 
+/**
+ * @description - starts the accident once the speed limit is reached
+ */
 const accident = () => {
     const accident = document.getElementsByClassName('accident')[0]
     accident.style.display = 'block'
@@ -170,6 +184,9 @@ const accident = () => {
 
 }
 
+/**
+ * @description - starts the car that initiates the accident
+ */
 const car = () =>{
     const crash = document.getElementsByClassName('crash')[0]
     crash.style.display = 'block'
@@ -188,6 +205,10 @@ const car = () =>{
 }
 
 const tree = document.getElementsByClassName('tree-wrap')[0]
+/**
+ * @description shifts the gear based on speed received
+ * @param {number} speed gets the current speed
+ */
 function gearShift(speed) {
     if(speed+1  === 10){
         tree.style.display = 'block'
